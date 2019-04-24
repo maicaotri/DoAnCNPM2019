@@ -1,50 +1,62 @@
 package com.model.entitymodel;
 
 import java.io.Serializable;
-import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * The persistent class for the job_post database table.
  * 
  */
 @Entity
-@Table(name="job_post")
-@NamedQuery(name="JobPost.findAll", query="SELECT j FROM JobPost j")
+@Table(name = "job_post")
+@NamedQuery(name = "JobPost.findAll", query = "SELECT j FROM JobPost j")
 public class JobPost implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
 	private String company;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name="create_date")
+	@Column(name = "create_date")
 	private Date createDate;
 
 	@Lob
 	private String description;
 
-	@Column(name="is_active")
+	@Column(name = "is_active")
 	private String isActive;
 
-	@Column(name="job_type")
+	@Column(name = "job_type")
 	private String jobType;
 
 	private String location;
 
+	private String position;
+
 	private Integer salary;
 
-	//bi-directional many-to-one association to User
+	// bi-directional many-to-one association to User
 	@ManyToOne
-	@JoinColumn(name="post_user_id")
+	@JoinColumn(name = "post_user_id")
 	private User user;
 
-	//bi-directional many-to-one association to JobPostActivity
+	// bi-directional many-to-one association to JobPostActivity
 //	@OneToMany(mappedBy="jobPost")
 //	private List<JobPostActivity> jobPostActivities;
 
@@ -105,6 +117,14 @@ public class JobPost implements Serializable {
 
 	public void setLocation(String location) {
 		this.location = location;
+	}
+
+	public String getPosition() {
+		return position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
 	}
 
 	public Integer getSalary() {
