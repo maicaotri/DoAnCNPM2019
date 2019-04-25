@@ -2,12 +2,51 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Registration</title>
+<link type="text/css" th:href="@{/css/login.css}" rel="stylesheet" />
 </head>
 <body>
-<form>
-username<input type="text"/> <br>
-password<input type="password"/>
-</form>
+<div class="wrapper">
+            <div class="inner">
+                <div class="image-holder" style="margin-top: 200px; height: 500px">
+                    <img th:src="@{/images/recruitment-serrvices.jpg}" alt="">
+                </div>
+                <form action="">
+                    <h3>Sign Up</h3>
+                    <div class="form-holder active">
+                        <input type="text" placeholder="Username" class="form-control">
+                    </div>
+                    <div class="form-holder">
+                        <input type="text" placeholder="e-mail" class="form-control">
+                    </div>
+                    <div class="form-holder">
+                        <input type="radio" name="optradio" checked>Male
+                        <input type="radio" name="optradio">Female
+                    </div><br><br>
+
+                    <div class="form-holder">
+                        <input type="password" placeholder="Password" class="form-control" style="font-size: 15px;">
+                    </div>
+                    <div class="form-holder">
+                        <input type="password" placeholder="Password confirm" class="form-control" style="font-size: 15px;">
+                    </div>
+                    <div class="form-holder">
+                        <input type="text" placeholder="Address" class="form-control">
+                    </div>
+                    <div class="form-holder">
+                        <input type="number" placeholder="Phone" class="form-control">
+                    </div>
+                    <div class="form-login">
+                        <button>Sign up</button>
+                        <p>Already Have account? <a th:href="@{login}">Login</a></p>
+                        <br><br>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+<script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}" />
+<script type="text/javascript" th:src="@{/js/mainlogin.js}" />
+
 </body>
 </html>
