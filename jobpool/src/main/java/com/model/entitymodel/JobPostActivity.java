@@ -25,6 +25,7 @@ public class JobPostActivity implements Serializable {
 
 	//bi-directional many-to-one association to User
 	@ManyToOne
+	@JoinColumn(name = "username")
 	private User user;
 
 	//bi-directional many-to-one association to JobPost

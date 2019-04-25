@@ -49,4 +49,12 @@ public class UserDaoImpl implements UserDao {
 		return entityManager.createQuery(jql, User.class).getResultList();
 	}
 
+	@Override
+	public boolean checkUsernameIsExist(String username) {
+		User user = entityManager.find(User.class, username);
+		if (user != null)
+			return false;
+		return true;
+	}
+
 }

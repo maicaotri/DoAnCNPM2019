@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.model.entitymodel.User;
@@ -25,5 +26,10 @@ public class UserController {
 	@RequestMapping(value = "/user/{username}", method = RequestMethod.GET)
 	public @ResponseBody User getUserDetail(@PathVariable(name="username") String username) {
 		return userService.getByUsername(username);
+	}
+	
+	@RequestMapping(value = "/user", method = RequestMethod.GET)
+	public @ResponseBody boolean checkUsernameIsExist(@RequestParam(name="username") String username) {
+		return userService.checkUsernameIsExist(username);
 	}
 }

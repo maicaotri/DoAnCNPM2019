@@ -15,4 +15,6 @@ public interface UserService {
 	public User getByUsername(String username);
 	
 	public List<User> findAll();
+	
+	public boolean checkUsernameIsExist(String username);
 }

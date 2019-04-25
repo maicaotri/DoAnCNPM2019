@@ -48,12 +48,14 @@ public class JobPost implements Serializable {
 	private String location;
 
 	private String position;
+	
+	private String title;
 
 	private Integer salary;
 
 	// bi-directional many-to-one association to User
 	@ManyToOne
-	@JoinColumn(name = "post_user_id")
+	@JoinColumn(name = "post_user")
 	private User user;
 
 	// bi-directional many-to-one association to JobPostActivity
@@ -125,6 +127,14 @@ public class JobPost implements Serializable {
 
 	public void setPosition(String position) {
 		this.position = position;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public Integer getSalary() {

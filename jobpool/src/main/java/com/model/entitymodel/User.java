@@ -24,10 +24,6 @@ import javax.persistence.TemporalType;
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-
 	@Temporal(TemporalType.DATE)
 	@Column(name = "date_of_birth")
 	private Date dateOfBirth;
@@ -49,6 +45,8 @@ public class User implements Serializable {
 
 	private String phone;
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String username;
 
 	// bi-directional many-to-one association to JobPost
@@ -65,14 +63,6 @@ public class User implements Serializable {
 	private UserType userType;
 
 	public User() {
-	}
-
-	public Integer getId() {
-		return this.id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	public Date getDateOfBirth() {

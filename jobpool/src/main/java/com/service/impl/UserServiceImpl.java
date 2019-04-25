@@ -39,4 +39,9 @@ public class UserServiceImpl implements UserService {
 		return userDao.findAll();
 	}
 
+	@Override
+	public boolean checkUsernameIsExist(String username) {
+		return userDao.checkUsernameIsExist(username);
+	}
+
 }
