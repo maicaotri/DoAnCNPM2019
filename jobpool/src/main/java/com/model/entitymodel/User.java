@@ -44,6 +44,8 @@ public class User implements Serializable {
 	private String password;
 
 	private String phone;
+	
+	private String role;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -188,5 +190,14 @@ public class User implements Serializable {
 	public void setUserType(UserType userType) {
 		this.userType = userType;
 	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
 
 }

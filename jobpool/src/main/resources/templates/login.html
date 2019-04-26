@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Login</title>
@@ -11,13 +11,13 @@
 			<div class="image-holder" style="margin-top: 100px; height: 350px">
 				<img src="images/recruitment-serrvices.jpg" alt="">
 			</div>
-			<form action="">
+			<form th:action="@{/login}" method="POST">
 				<h3>Sign In</h3>
 				<div class="form-holder active">
-					<input type="text" placeholder="Username" class="form-control">
+					<input type="text" placeholder="Username" name="username" class="form-control">
 				</div>
 				<div class="form-holder">
-					<input type="password" placeholder="Password" class="form-control"
+					<input type="password" placeholder="Password" name="password" class="form-control"
 						style="font-size: 15px;">
 				</div>
 				<div class="form-login">
