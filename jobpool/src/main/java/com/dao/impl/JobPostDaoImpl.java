@@ -97,4 +97,19 @@ public class JobPostDaoImpl implements JobPostDao {
 		return entityManager.createQuery(jql, JobPost.class).getResultList();
 	}
 
+	@Override
+	public List<JobPost> find(String position, String jobType, String location, boolean isActive) {
+		String active = "Y";
+		if (!isActive)
+			active = "N";
+		StringBuilder jql = new StringBuilder("SELECT u FROM JobPost u WHERE u.isActive = '%" + active + "%' ");
+		if (position != null)
+			jql.append(" AND u.position LIKE '").append(position).append("%' ");
+		if (jobType != null)
+			jql.append(" AND u.jobType LIKE '").append(jobType).append("%' ");
+		if (location != null)
+			jql.append(" AND u.location LIKE '").append(location).append("%' ");
+		return entityManager.createQuery(jql.toString(), JobPost.class).getResultList();
+	}
+
 }

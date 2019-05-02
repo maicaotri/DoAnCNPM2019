@@ -2,79 +2,80 @@ package com.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class IndexController {
 
-	@GetMapping("/register")
+	@RequestMapping("/register")
 	public String getRegisterPage() {
 		return "register";
 	}
-	@GetMapping("/about")
+	@RequestMapping("/about")
 	public String getAboutPage() {
 		return "about";
 	}
-	@GetMapping("/login")
+	@RequestMapping("/login")
 	public String getLoginPage() {
 		return "login";
 	}
-	@GetMapping("/home")
+	@RequestMapping("/home")
 	public String getHomePage() {
 		return "home";
 	}
-	@GetMapping("/jobPost")
+	@RequestMapping("/jobPost")
 	public String getJobPostPage() {
 		return "job-post";
 	}
-	@GetMapping("/newPost")
+	@RequestMapping("/newPost")
 	public String getNewPostPage() {
 		return "new-post";
 	}
-	@GetMapping("/blog")
+	@RequestMapping("/blog")
 	public String getBlogPage() {
 		return "blog";
 	}
-	@GetMapping("/blogSingle")
+	@RequestMapping("/blogSingle")
 	public String getBlogSinglePage() {
 		return "blog-single";
 	}
-	@GetMapping("/contact")
+	@RequestMapping("/contact")
 	public String getContactPage() {
 		return "contact";
 	}
-	@GetMapping("/admin")
+	@RequestMapping("/admin")
 	public String getAdminPage() {
 		return "/admin/admin";
 	}
-	@GetMapping("/account")
+	@RequestMapping("/account")
 	public String getAccountPage() {
 		return "/admin/account";
 	}
-	@GetMapping("/addAccount")
+	@RequestMapping("/addAccount")
 	public String getAddAccountPage() {
 		return "/admin/add_account";
 	}
-	@GetMapping("/addArticle")
+	@RequestMapping("/addArticle")
 	public String getAddArticlePage() {
 		return "/admin/add_article";
 	}
-	@GetMapping("/charts")
+	@RequestMapping("/charts")
 	public String getChartsPage() {
 		return "/admin/charts";
 	}
-	@GetMapping("/editAccount")
+	@RequestMapping("/editAccount")
 	public String getEditAccountPage() {
 		return "/admin/edit_account";
 	}
-	@GetMapping("/editArticle")
+	@RequestMapping("/editArticle")
 	public String getEditArticlePage() {
 		return "/admin/edit_article";
 	}
-	@GetMapping(value="/menu")
+	@RequestMapping(value="/menu")
 	public String getMenu() {
 		return "/admin/menu";
 	}
-	@GetMapping("/post_article")
+	@RequestMapping("/post_article")
 	public String getPostArticlePage() {
 		return "/admin/post_article";
 	}

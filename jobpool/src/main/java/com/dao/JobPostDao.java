@@ -16,6 +16,8 @@ public interface JobPostDao {
 	
 	public List<JobPost> findAll();
 
+	public List<JobPost> find(String position, String jobType, String location, boolean isActive);
+
 	public List<JobPost> findJobType(String jobType);
 
 	public List<JobPost> findCompany(String company);

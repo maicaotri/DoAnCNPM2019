@@ -15,6 +15,8 @@ public interface JobPostService {
 	public JobPost findById(int id);
 
 	public List<JobPost> findAll();
+	
+	public List<JobPost> find(String position, String jobType, String location, boolean isActive);
 
 	public List<JobPost> findJobType(String jobType);
 	

@@ -24,7 +24,13 @@ import javax.persistence.TemporalType;
 @Table(name = "job_post")
 @NamedQuery(name = "JobPost.findAll", query = "SELECT j FROM JobPost j")
 public class JobPost implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
+	private static final String JOB_TYPE_PARTTIME = "Partime";
+	private static final String JOB_TYPE_FULLTIME = "Full Time";
+	private static final String JOB_TYPE_FREELANCE = "Freelance";
+	private static final String JOB_TYPE_INTERNSHIP = "Internship";
+	private static final String JOB_TYPE_TEMPORARY = "Temporary";
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -79,4 +79,9 @@ public class JobPostServiceImpl implements JobPostService {
 		return jobPostDao.findByPostUser(username);
 	}
 
+	@Override
+	public List<JobPost> find(String position, String jobType, String location, boolean isActive) {
+		return jobPostDao.find(position, jobType, location, isActive);
+	}
+
 }

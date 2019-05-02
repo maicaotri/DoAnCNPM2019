@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -65,7 +66,7 @@ public class UserController {
 	public String getAdminPage() {
 		return "admin_demo";
 	}
-	
+
 	@GetMapping("/logout")
 	public String logout(HttpServletRequest request, HttpServletResponse response) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -74,5 +75,13 @@ public class UserController {
 		}
 		return "redirect:/";
 	}
+
+	
+//	public static void main(String[] args) {
+//		String password = "demo123";
+//		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder(12);
+//		String hashedPassword = passwordEncoder.encode(password);
+//		System.out.println(hashedPassword);
+//	}
 
 }
