@@ -1,11 +1,18 @@
 package com.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.service.JobPostService;
+
 @Controller
 public class IndexController {
+	@Autowired
+	JobPostService jobPostService;
 
 	@RequestMapping("/register")
 	public String getRegisterPage() {
@@ -20,7 +27,8 @@ public class IndexController {
 		return "login";
 	}
 	@RequestMapping("/home")
-	public String getHomePage() {
+	public String getHomePage(HttpServletRequest request) {
+		request.setAttribute("listJobPost", jobPostService.findAll());
 		return "home";
 	}
 	@RequestMapping("/jobPost")
